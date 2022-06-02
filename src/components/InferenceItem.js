@@ -42,7 +42,7 @@ const InferenceItem = (props) => {
       setDisableButton(true);
     });
 
-    var input_args = {'model': props.layerID};
+    var input_args = {'model': props.layerID, 'group': props.group};
 
 
 

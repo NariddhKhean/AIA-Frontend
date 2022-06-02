@@ -1,6 +1,6 @@
 import mapboxgl from '!mapbox-gl';  // eslint-disable-line import/no-webpack-loader-syntax
 
-export function setUpPopup(map, layerID) {
+function setUpPopup(map, layerID) {
   const popup = new mapboxgl.Popup({
     closeButton: false,
     closeOnClick: false,
