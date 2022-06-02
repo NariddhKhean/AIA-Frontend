@@ -2,7 +2,7 @@
 
 ## Description
 
-The objective of this project is to develop a full stack web platform for the _AI in Architecture_ studio, whereby the students can display both their models and results, and deploy them onto whichever cloud technology IAAC so chooses.
+The objective of this project is to develop a full stack web platform for the _AI in Architecture_ studio, whereby the students can display both their ML models and results, and deploy them onto whichever cloud technology IAAC so chooses.
 
 ### Frontend
 
@@ -19,4 +19,21 @@ Built using _React_, and styled with _Tailwind_, the frontend will house the int
 The standalone backend server will act as a REST API to handle fetch requests from the aforementioned frontend. This backend server will host all data and models provided by the students, including static data layers in the form of GeoJSONs and Mapbox Style JSONs, as well as student-trained ML models, to respond to live inference requests.
 
 Containerised using _Docker_ and managed with _Docker-compose_, the _Python_-based _Flask_ web server will use _Gunicorn_ to serve the student’s static files (*.geojson and style.json files), ML models, and pre-/post-processing scripts (_Python_ functions) over a REST API. An _NGINX_ load balancer will be placed in front of the server. The backend is where the student groups will be uploading their data layers, _Mapbox_ styles, and ML model pipelines, so a specification for how this will be used will also be developed and provided.
+
+## Getting Started
+
+To start the frontend server locally, you'll need [_npm_]().
+
+Then, clone this repo, create an environment variables file called `.env`, and then add your _Mapbox_ API key.
+
+```fish
+echo "<YOUR MAPBOX API KEY HERE>" > .env
+```
+
+Then, install the dependencies and then start.
+
+```fish
+npm install
+npm start
+```
 
