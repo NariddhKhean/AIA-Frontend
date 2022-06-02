@@ -2,12 +2,12 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import mapboxgl from '!mapbox-gl';  // eslint-disable-line import/no-webpack-loader-syntax
 
-import setUpPopup from '../components/Popup';
-import ToggleItem from '../components/ToggleItem';
-import InferenceItem from '../components/InferenceItem';
+import setUpPopup from '../../components/Popup';
+import ToggleItem from '../../components/ToggleItem';
+import InferenceItem from '../../components/InferenceItem';
 
 
-const Dashboard = () => {
+const Map = () => {
 
   const APIURL = 'http://localhost:5000';
   const mapboxAPIKEY = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -144,8 +144,8 @@ const Dashboard = () => {
       <div ref={mapContainer} className="map-container relative" />
 
       <div className="absolute top-4 left-4 w-48 overflow-y-auto py-4 px-3 bg-gray-50 rounded">
-        <Link to="/about" className="flex p-2">
-          <span className="text-lg font-mono font-black text-gray-800 select-none">logo</span>
+        <Link to="/g1" className="flex p-2">
+          <span className="text-lg font-mono font-black text-gray-800 select-none">back</span>
         </Link>
         <div className="py-4 mt-2 border-t border-gray-200 text-sm font-mono font-black text-gray-800 select-none">inferences</div>
         <ul className="space-y-2">
@@ -180,4 +180,4 @@ const Dashboard = () => {
   );
 }
 
-export default Dashboard;
+export default Map;
