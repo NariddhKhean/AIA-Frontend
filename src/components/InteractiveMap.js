@@ -36,7 +36,7 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
           handleSetLiveLayerNames(fetchedLiveLayerNames)
         });
     });
-  });
+  });  // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     async function updateLiveLayers() {
@@ -57,7 +57,7 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
       });
     }
     updateLiveLayers();
-  }, [liveLayerNames]);
+  }, [liveLayerNames]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     async function updateStaticLayers() {
@@ -78,7 +78,7 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
       });
     }
     updateStaticLayers();
-  }, [staticLayerNames]);
+  }, [staticLayerNames]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return map;
 }
