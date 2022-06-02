@@ -22,7 +22,7 @@ Containerised using _Docker_ and managed with _Docker-compose_, the _Python_-bas
 
 ## Getting Started
 
-To start the frontend server locally, you'll need [_npm_]().
+To start the frontend server locally, you'll need [_npm_](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 Then, clone this repo, create an environment variables file called `.env`, and then add your _Mapbox_ API key.
 
