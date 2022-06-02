@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import mapboxgl from '!mapbox-gl';  // eslint-disable-line import/no-webpack-loader-syntax
 
+import setUpPopup from '../components/Popup';
 import ToggleItem from '../components/ToggleItem';
 import InferenceItem from '../components/InferenceItem';
 
@@ -115,6 +116,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     async function updateStaticLayers() {
+      setUpPopup(map, 'point'); // NOTE: Placeholder, test for mouseover metadata
       staticLayerNames.forEach(async function(layerName) {
         var geojson = await fetch(APIURL + '/static/' + layerName + '/geo.geojson')
           .then(response => response.json());
