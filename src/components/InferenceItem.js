@@ -30,21 +30,18 @@ const InferenceItem = (props) => {
         .then(value => {
           inputArgs[key] = value.lngLat;
           document.getElementById("currentArg" + key).innerHTML = "(" + value.lngLat.lng.toFixed(3) + ", " + value.lngLat.lat.toFixed(3) + ")";
-          fetchInference(inputArgs);
         });
     }
 
-    async function addSliderTo(key) {
+    function addSliderTo(key) {
       var slider = document.getElementById("sliderArg" + key);
       inputArgs[key] = slider.value;
       document.getElementById("currentArg" + key).innerHTML = slider.value;
-      await fetchInference(inputArgs);
     }
 
-    async function addDropdownTo(key) {
+    function addDropdownTo(key) {
       var dropdown = document.getElementById("dropdownArg" + key);
       inputArgs[key] = dropdown.options[dropdown.selectedIndex].value;
-      await fetchInference(inputArgs);
     }
 
     if (props.inputs.length > 0) {
@@ -83,7 +80,7 @@ const InferenceItem = (props) => {
                 <div className="flex-1 text-left">{input["prompt"]}</div>
                 <div className="flex-none text-right" id={"currentArg" + input["returnID"]}>{inputArgs[input["returnID"]]}</div>
               </div>
-              <input className="w-full h-2 accent-slate-400 bg-gray-200 rounded-lg appearance-none cursor-pointer" id={"sliderArg" + input["returnID"]} type="range" onChange={ async () => await addSliderTo(input["returnID"]) } min={input["min"]} max={input["max"]} />
+              <input className="w-full h-2 accent-slate-400 bg-gray-200 rounded-lg appearance-none cursor-pointer" id={"sliderArg" + input["returnID"]} type="range" onChange={ () => addSliderTo(input["returnID"]) } min={input["min"]} max={input["max"]} />
             </div>
           );
 
@@ -92,7 +89,7 @@ const InferenceItem = (props) => {
           argsList.push(
             <div>
               <div className="w-full text-sm italic pb-2">{input["prompt"]}</div>
-              <select className="w-full form-select block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id={"dropdownArg" + input["returnID"]} onChange={ async () => await addDropdownTo(input["returnID"]) }>
+              <select className="w-full form-select block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id={"dropdownArg" + input["returnID"]} onChange={ () => addDropdownTo(input["returnID"]) }>
                 {input["options"].map((option, i) => <option key={i}>{option}</option>)}
               </select>
             </div>
@@ -102,6 +99,14 @@ const InferenceItem = (props) => {
           throw "Student error: unknown input type: " + input["type"];
         }
       });
+
+      argsList.push(
+        <div className="flex">
+          <div className="flex-1"></div>
+          <button className="flex-none text-sm font-mono font-black text-gray-800 p-2 rounded bg-gray-200 hover:bg-gray-100" onClick={ async () => await fetchInference(inputArgs) }>run</button>
+          <div className="flex-1"></div>
+        </div>
+      );
 
       props.handleSetArgsList(argsList);
       props.handleSetArgsVis("");
@@ -153,7 +158,3 @@ const InferenceItem = (props) => {
 }
 
 export default InferenceItem;
-
-/*
-      <button className="w-full" disabled={disableButton} onClick={fetchInference(props.APIURL, props.map, props.layerID)}>
-*/
