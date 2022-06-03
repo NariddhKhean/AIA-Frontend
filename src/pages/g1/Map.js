@@ -16,23 +16,23 @@ const Map = () => {
   const mapContainer = useRef(null);
   const [staticLayerNames, setStaticLayerNames] = useState([]);
   function handleSetStaticLayerNames(val) { setStaticLayerNames(val) }
-  const [liveLayerNames, setLiveLayerNames] = useState([]);
-  function handleSetLiveLayerNames(val) { setLiveLayerNames(val) }
+  const [liveLayers, setLiveLayers] = useState({});
+  function handleSetLiveLayers(val) { setLiveLayers(val) }
 
   const [showPrompt, setShowPrompt] = useState(false);
   function handleShowPrompt(val) { setShowPrompt(val) };
   const [prompt, setPrompt] = useState("");
   function handlePrompt(val) { setPrompt(val) };
 
-  const map = InteractiveMap(group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayerNames, handleSetLiveLayerNames);
+  const map = InteractiveMap(group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers);
 
   return (
     <div>
       <div className="absolute top-1/2 w-screen text-center text-2xl">map loading...</div>
       <div ref={mapContainer} className="map-container relative" />
 
-      <InferenceMenu group={group} map={map} APIURL={APIURL} liveLayerNames={liveLayerNames}/>
-      <ToggleMenu map={map} staticLayerNames={staticLayerNames} liveLayerNames={liveLayerNames}/>
+      <InferenceMenu group={group} map={map} APIURL={APIURL} liveLayers={liveLayers}/>
+      <ToggleMenu map={map} staticLayerNames={staticLayerNames} liveLayers={liveLayers}/>
 
     </div>
   )

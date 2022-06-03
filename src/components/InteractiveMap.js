@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import mapboxgl from '!mapbox-gl';  // eslint-disable-line import/no-webpack-loader-syntax
 
-const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayerNames, handleSetLiveLayerNames) => {
+const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers) => {
 
   const map = useRef(null);
 
@@ -32,15 +32,15 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
       // live layers
       fetch(APIURL + '/' + group + '/livelayers')
         .then(response => response.json())
-        .then(fetchedLiveLayerNames => {
-          handleSetLiveLayerNames(fetchedLiveLayerNames)
+        .then(fetchedLiveLayers => {
+          handleSetLiveLayers(fetchedLiveLayers)
         });
     });
   });  // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     async function updateLiveLayers() {
-      liveLayerNames.forEach(async function(layerName) {
+      Object.keys(liveLayers).forEach(async function(layerName) {
         var geojson = await fetch(APIURL + '/live/' + group + '/' + layerName + '/geo.geojson')
           .then(response => response.json());
         map.current.addSource(layerName + 'Source', {
@@ -57,7 +57,7 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
       });
     }
     updateLiveLayers();
-  }, [liveLayerNames]);  // eslint-disable-line react-hooks/exhaustive-deps
+  }, [liveLayers]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     async function updateStaticLayers() {
