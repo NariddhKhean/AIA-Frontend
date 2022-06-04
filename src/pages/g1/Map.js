@@ -20,8 +20,10 @@ const Map = () => {
   const [liveLayers, setLiveLayers] = useState({});
   function handleSetLiveLayers(val) { setLiveLayers(val) }
 
-  const [runningInference, setRunningInference] = useState(false);
-  function handleSetRunningInference(val) { setRunningInference(val) }
+  const [inferenceReturned, setInferenceReturned] = useState({});
+  function handleSetInferenceReturned(key, val) {
+    setInferenceReturned({...inferenceReturned, [key]: val});
+  }
 
   const [argsVis, setArgsVis] = useState("hidden");
   function handleSetArgsVis(val) { setArgsVis(val) }
@@ -35,8 +37,8 @@ const Map = () => {
       <div className="absolute top-1/2 w-screen text-center text-2xl">map loading...</div>
       <div ref={mapContainer} className="map-container relative" />
 
-      <InferenceMenu group={group} map={map} APIURL={APIURL} liveLayers={liveLayers} runningInference={runningInference} handleSetRunningInference={handleSetRunningInference} argsVis={argsVis} handleSetArgsVis={handleSetArgsVis} handleSetArgsList={handleSetArgsList}/>
-      <ToggleMenu map={map} staticLayerNames={staticLayerNames} liveLayers={liveLayers}/>
+      <InferenceMenu group={group} map={map} APIURL={APIURL} liveLayers={liveLayers} handleSetInferenceReturned={handleSetInferenceReturned} argsVis={argsVis} handleSetArgsVis={handleSetArgsVis} handleSetArgsList={handleSetArgsList}/>
+      <ToggleMenu map={map} staticLayerNames={staticLayerNames} liveLayers={liveLayers} inferenceReturned={inferenceReturned} handleSetInferenceReturned={handleSetInferenceReturned}/>
 
       <div className={argsVis}><ArgumentMenu argsList={argsList}/></div>
 
