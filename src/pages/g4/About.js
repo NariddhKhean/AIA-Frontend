@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const About = () => {
   return (
     <div>
       <ul>
-        <li><Link to="/">back</Link></li>
+        <li><Link to="/#groups">back</Link></li>
         <li><Link to="/g4/map">map</Link></li>
       </ul>
     </div>
