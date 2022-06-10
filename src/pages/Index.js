@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Index = () => {
 
@@ -6,9 +6,9 @@ const Index = () => {
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
 
       <div className="snap-center h-screen relative flex flex-row justify-center items-center">
-        <div className="basis-1/3 text-center">
-          <img className="mx-auto" width={80} src={process.env.PUBLIC_URL + "/logo-white.png"} />
-          <div className="py-8 font-sans font-black text-xl tracking-widest">ABOUT THE STUDIO</div>
+        <div className="basis-1/3 text-center place-items-center">
+          <img className="mx-auto" width={120} src={process.env.PUBLIC_URL + "/logo.png"}/>
+          <div className="pb-8 pt-16 font-sans font-black text-xl tracking-widest">ABOUT THE STUDIO</div>
           <img className="mx-auto" width={230} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
         </div>
         <div className="basis-1/3 font-light tracking-wide">
@@ -26,67 +26,67 @@ const Index = () => {
         <div className="flex-shrink grid grid-cols-3 grid-rows-3 gap-4">
 
           <Link className="relative w-48 h-48 text-center" to="/g1">
-            <svg className="absolute top-0 left-0 w-full h-full text-[#fb923ca0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
+            <svg className="absolute top-0 left-0 w-full h-full text-[#fc9b47a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
               <div className="italic text-lg tracking-wide">AI-UBREM</div>
-              <div className="text-xs font-mono font-black tracking-wide">~/sync/1</div>
+              <div className="text-xs font-mono font-black tracking-wide">~/sync/4</div>
             </div>
           </Link>
 
           <Link className="relative w-48 h-48 text-center align-middle" to="/g2">
-            <svg className="absolute top-0 left-0 w-full h-full text-[#fde047a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
+            <svg className="absolute top-0 left-0 w-full h-full text-[#dac710a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
               <div className="italic text-lg tracking-wide">Bike Mapper</div>
-              <div className="text-xs font-mono font-black tracking-wide">~/sync/2</div>
+              <div className="text-xs font-mono font-black tracking-wide">~/async/2</div>
             </div>
           </Link>
 
           <Link className="relative w-48 h-48 text-center align-middle" to="/g3">
-            <svg className="absolute top-0 left-0 w-full h-full text-[#d9f99da0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
+            <svg className="absolute top-0 left-0 w-full h-full text-[#cee741a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
               <div className="italic text-lg tracking-wide">A.EYE</div>
-              <div className="text-xs font-mono font-black tracking-wide">~/sync/3</div>
+              <div className="text-xs font-mono font-black tracking-wide">~/sync/1</div>
             </div>
           </Link>
 
           <Link className="relative w-48 h-48 text-center align-middle" to="/g4">
-            <svg className="absolute top-0 left-0 w-full h-full text-[#fb7185a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
+            <svg className="absolute top-0 left-0 w-full h-full text-[#e13483a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
-              <div className="italic text-lg tracking-wide">Karate Club</div>
-              <div className="text-xs font-mono font-black tracking-wide">~/sync/4</div>
+              <div className="italic text-lg tracking-wide">The AirBnB Effect</div>
+              <div className="text-xs font-mono font-black tracking-wide">~/aync/1</div>
             </div>
           </Link>
 
           <div></div>
 
           <Link className="relative w-48 h-48 text-center align-middle" to="/g5">
-            <svg className="absolute top-0 left-0 w-full h-full text-[#67e8f9a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
+            <svg className="absolute top-0 left-0 w-full h-full text-[#12cdd4a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
-              <div className="italic text-lg tracking-wide">Game of Green</div>
-              <div className="text-xs font-mono font-black tracking-wide">~/async/1</div>
+              <div className="italic text-lg tracking-wide">Karate Club</div>
+              <div className="text-xs font-mono font-black tracking-wide">~/sync/2</div>
             </div>
           </Link>
 
           <Link className="relative w-48 h-48 text-center align-middle" to="/g6">
-            <svg className="absolute top-0 left-0 w-full h-full text-[#d8b4fea0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
-            <div className="relative flex flex-col h-full text-white place-content-center">
-              <div className="italic text-lg tracking-wide">Urban Voids</div>
-              <div className="text-xs font-mono font-black tracking-wide">~/async/2</div>
-            </div>
-          </Link>
-
-          <Link className="relative w-48 h-48 text-center align-middle" to="/g7">
-            <svg className="absolute top-0 left-0 w-full h-full text-[#a5b4fca0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
+            <svg className="absolute top-0 left-0 w-full h-full text-[#bb86c4a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
               <div className="italic text-lg tracking-wide">Vivarium</div>
               <div className="text-xs font-mono font-black tracking-wide">~/async/3</div>
             </div>
           </Link>
 
-          <Link className="relative w-48 h-48 text-center align-middle" to="/g8">
-            <svg className="absolute top-0 left-0 w-full h-full text-[#6ee7b7a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
+          <Link className="relative w-48 h-48 text-center align-middle" to="/g7">
+            <svg className="absolute top-0 left-0 w-full h-full text-[#205195a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
-              <div className="italic text-lg tracking-wide">The AirBnB Effect</div>
+              <div className="italic text-lg tracking-wide">Urban Voids</div>
+              <div className="text-xs font-mono font-black tracking-wide">~/sync/3</div>
+            </div>
+          </Link>
+
+          <Link className="relative w-48 h-48 text-center align-middle" to="/g8">
+            <svg className="absolute top-0 left-0 w-full h-full text-[#0ca789a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
+            <div className="relative flex flex-col h-full text-white place-content-center">
+              <div className="italic text-lg tracking-wide">Game of Green</div>
               <div className="text-xs font-mono font-black tracking-wide">~/async/4</div>
             </div>
           </Link>

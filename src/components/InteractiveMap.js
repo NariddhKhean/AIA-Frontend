@@ -9,7 +9,7 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
     if (map.current) return;
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/dark-v10',
+      style: 'mapbox://styles/mapbox/light-v10',
       center: [16.3738, 48.2082],
       zoom: 13,
       maxBounds: [
