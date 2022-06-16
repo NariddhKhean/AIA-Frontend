@@ -7,12 +7,18 @@ const About = () => {
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
 
       <div className="snap-center h-screen relative flex flex-row justify-center items-center">
-        <div className="basis-1/3 text-center place-items-center">
-          <img className="mx-auto" width={120} src={process.env.PUBLIC_URL + "/g" + group + "/group-logo.png"}/>
-          <div className="pb-8 pt-16 font-sans font-black text-xl tracking-widest">A.EYE</div>
-          <img className="mx-auto" width={230} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
+        <div className="basis-1/3">
+          <div className="flex justify-center">
+            <Link to="/#groups">
+              <img className="py-4" width={200} src={process.env.PUBLIC_URL + "/g" + group + "/group-logo.png"}/>
+            </Link>
+          </div>
+          <div className="flex justify-center">
+            <img className="py-4" width={200} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
+          </div>
         </div>
         <div className="basis-1/3 font-light tracking-wide">
+          <div className="pb-8 font-sans font-extralight text-3xl tracking-widest">A.EYE</div>
           [to do: group description]
         </div>
         <svg className="absolute bottom-12 animate-bounce w-10 h-10 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>

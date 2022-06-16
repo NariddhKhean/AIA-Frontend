@@ -7,11 +7,11 @@ const Index = () => {
 
       <div className="snap-center h-screen relative flex flex-row justify-center items-center">
         <div className="basis-1/3 text-center place-items-center">
-          <img className="mx-auto" width={120} src={process.env.PUBLIC_URL + "/logo.png"}/>
-          <div className="pb-8 pt-16 font-sans font-black text-xl tracking-widest">ABOUT THE STUDIO</div>
-          <img className="mx-auto" width={230} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
+          <img className="mx-auto py-4" width={200} src={process.env.PUBLIC_URL + "/logo.png"}/>
+          <img className="mx-auto py-4" width={200} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
         </div>
         <div className="basis-1/3 font-light tracking-wide">
+          <div className="pb-8 font-sans font-extralight text-3xl tracking-widest">ABOUT THE STUDIO</div>
           Visualization as a tool for analysis, exploration, and communication has become a driving force in the task of unravelling the complex urban fabrics that form our cities. This platform tries to bring together urban visualization projects from around the globe.
         </div>
         <svg className="absolute bottom-12 animate-bounce w-10 h-10 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
@@ -28,16 +28,16 @@ const Index = () => {
           <Link className="relative w-48 h-48 text-center" to="/g1">
             <svg className="absolute top-0 left-0 w-full h-full text-[#fc9b47a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
-              <div className="italic text-lg tracking-wide">AI-UBREM</div>
-              <div className="text-xs font-mono font-black tracking-wide">~/sync/4</div>
+              <div className="italic text-lg tracking-wide">Bike Mapper</div>
+              <div className="text-xs font-mono font-black tracking-wide">~/async/2</div>
             </div>
           </Link>
 
           <Link className="relative w-48 h-48 text-center align-middle" to="/g2">
             <svg className="absolute top-0 left-0 w-full h-full text-[#dac710a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
-              <div className="italic text-lg tracking-wide">Bike Mapper</div>
-              <div className="text-xs font-mono font-black tracking-wide">~/async/2</div>
+              <div className="italic text-lg tracking-wide">AI-UBREM</div>
+              <div className="text-xs font-mono font-black tracking-wide">~/sync/4</div>
             </div>
           </Link>
 
@@ -62,7 +62,7 @@ const Index = () => {
           <Link className="relative w-48 h-48 text-center align-middle" to="/g5">
             <svg className="absolute top-0 left-0 w-full h-full text-[#12cdd4a0]" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10"/></svg>
             <div className="relative flex flex-col h-full text-white place-content-center">
-              <div className="italic text-lg tracking-wide">Karate Club</div>
+              <div className="italic text-lg tracking-wide">identifAI</div>
               <div className="text-xs font-mono font-black tracking-wide">~/sync/2</div>
             </div>
           </Link>

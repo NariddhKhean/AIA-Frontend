@@ -7,13 +7,19 @@ const About = () => {
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
 
       <div className="snap-center h-screen relative flex flex-row justify-center items-center">
-        <div className="basis-1/3 text-center place-items-center">
-          <img className="mx-auto" width={120} src={process.env.PUBLIC_URL + "/g" + group + "/group-logo.png"}/>
-          <div className="pb-8 pt-16 font-sans font-black text-xl tracking-widest">BIKE MAPPER</div>
-          <img className="mx-auto" width={230} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
+        <div className="basis-1/3">
+          <div className="flex justify-center">
+            <Link to="/#groups">
+              <img className="py-4" width={200} src={process.env.PUBLIC_URL + "/g" + group + "/group-logo.png"}/>
+            </Link>
+          </div>
+          <div className="flex justify-center">
+            <img className="py-4" width={200} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
+          </div>
         </div>
         <div className="basis-1/3 font-light tracking-wide">
-          [to do: group description]
+          <div className="pb-8 font-sans font-extralight text-3xl tracking-widest">AI-UBREM</div>
+          <span className="font-bold">Do you know your home contributes to 34% of Vienna Energy consumption?</span><br/><br/>Urban Building Energy modeling (UBEM) demonstrated a reliable tool to visualize city fabric and its complex systems use patterns. This tool enables visualizing and prediction of energy and solar potential of buildings as an <span className="font-bold">AI-based UBREM</span>. U-value is an index that measure building envelop/ structure heat transmittance. The lower the u-value shows better insulation, thus decreases your building energy consumption. Use the sliders to alter u-values for walls, windows, roof and basement. A single good insulation layer adding to your wall can decrease building energy consumption by almost 30%. Hence, building energy demand (BED) can be met using PV cells on roof top, the PV potential can even exceed BED and support neighboring units manifesting a Positive Energy District (PED) with renewable energy (RE).
         </div>
         <svg className="absolute bottom-12 animate-bounce w-10 h-10 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
       </div>

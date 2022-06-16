@@ -1,9 +1,9 @@
 import { useRef, useEffect } from 'react';
 import mapboxgl from '!mapbox-gl';  // eslint-disable-line import/no-webpack-loader-syntax
 
-const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers) => {
+const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers, popups) => {
 
-  const map = useRef(null);
+  var map = useRef(null);
 
   useEffect(() => {
     if (map.current) return;
@@ -75,6 +75,34 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
         style['source'] = layerName + 'Source';
         style['layout'] = {'visibility': 'none'};
         map.current.addLayer(style);
+
+        // popup
+        if (layerName in popups) {
+          const popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+          });
+
+          map.current.on('mouseenter', layerName, (e) => {
+
+            var coordinates = [16.3738, 48.2082];
+            if (e.features[0].geometry.type === 'Polygon') {
+              var coords = e.features[0].geometry.coordinates[0];
+              coordinates = coords[0].map((x, idx) => coords.reduce((sum, curr) => sum + curr[idx], 0) / coords.length);
+            }
+            // TODO FOR OTHER GEO TYPES
+
+            const description = e.features[0].properties.hover;
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+            popup.setLngLat(coordinates).setHTML(description).addTo(map.current);
+          });
+          map.current.on('mouseleave', layerName, () => {
+            popup.remove();
+          });
+        }
+
       });
     }
     updateStaticLayers();
