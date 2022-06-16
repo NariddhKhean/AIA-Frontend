@@ -19,17 +19,22 @@ const About = () => {
         </div>
         <div className="basis-1/3 font-light tracking-wide">
           <div className="pb-8 font-sans font-extralight text-3xl tracking-widest">AI-UBREM</div>
-          <span className="font-bold">Do you know your home contributes to 34% of Vienna Energy consumption?</span><br/><br/>Urban Building Energy modeling (UBEM) demonstrated a reliable tool to visualize city fabric and its complex systems use patterns. This tool enables visualizing and prediction of energy and solar potential of buildings as an <span className="font-bold">AI-based UBREM</span>. U-value is an index that measure building envelop/ structure heat transmittance. The lower the u-value shows better insulation, thus decreases your building energy consumption. Use the sliders to alter u-values for walls, windows, roof and basement. A single good insulation layer adding to your wall can decrease building energy consumption by almost 30%. Hence, building energy demand (BED) can be met using PV cells on roof top, the PV potential can even exceed BED and support neighboring units manifesting a Positive Energy District (PED) with renewable energy (RE).
+          <div className="text-xl">Do you know your home contributes to 34% of Vienna Energy consumption?</div>
         </div>
         <svg className="absolute bottom-12 animate-bounce w-10 h-10 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
       </div>
 
-      <div style={{backgroundImage: "url(/bg-vienna-white.png)"}} className="bg-cover bg-center snap-center h-screen flex items-center bg-black">
+      <div style={{backgroundImage: "url(/bg-vienna-white.png)"}} className="relative bg-cover bg-center snap-center h-screen flex items-center bg-black">
         <div className="w-screen text-center">[to do: "animated gif of the project"]</div>
+        <div className="absolute top-24 left-24 right-24 bottom-24">
+          <div className="w-1/3 h-full overflow-auto">
+            <div className="p-8 bg-[#FFFFFF80] text-lg">Urban Building Energy modeling (UBEM) demonstrated a reliable tool to visualize city fabric and its complex systems use patterns. This tool enables visualizing and prediction of energy and solar potential of buildings as an <span className="font-bold">AI-based UBREM</span>. U-value is an index that measure building envelop/ structure heat transmittance. The lower the u-value shows better insulation, thus decreases your building energy consumption. Use the sliders to alter u-values for walls, windows, roof and basement. A single good insulation layer adding to your wall can decrease building energy consumption by almost 30%. Hence, building energy demand (BED) can be met using PV cells on roof top, the PV potential can even exceed BED and support neighboring units manifesting a Positive Energy District (PED) with renewable energy (RE).</div>
+          </div>
+        </div>
       </div>
 
       <div className="relative snap-center h-screen flex items-center">
-        <div className="h-screen w-screen px-8 pt-8 pb-48">
+        <div className="h-screen w-screen p-48 pt-24">
           <img className="object-contain w-full h-full" src={process.env.PUBLIC_URL + "/g" + group + "/methodology.png"}/>
         </div>
         <Link to={"/g" + group + "/map"}>

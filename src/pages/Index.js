@@ -6,19 +6,23 @@ const Index = () => {
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
 
       <div className="snap-center h-screen relative flex flex-row justify-center items-center">
-        <div className="basis-1/3 text-center place-items-center">
-          <img className="mx-auto py-4" width={200} src={process.env.PUBLIC_URL + "/logo.png"}/>
-          <img className="mx-auto py-4" width={200} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
+        <div className="basis-1/3">
+          <div className="flex justify-center">
+            <img className="py-4" width={200} src={process.env.PUBLIC_URL + "/logo.png"}/>
+          </div>
+          <div className="flex justify-center">
+            <img className="py-4" width={200} src={process.env.PUBLIC_URL + "/logo-iaac.png"}/>
+          </div>
         </div>
         <div className="basis-1/3 font-light tracking-wide">
           <div className="pb-8 font-sans font-extralight text-3xl tracking-widest">ABOUT THE STUDIO</div>
-          Visualization as a tool for analysis, exploration, and communication has become a driving force in the task of unravelling the complex urban fabrics that form our cities. This platform tries to bring together urban visualization projects from around the globe.
+          <div className="text-xl">Visualization as a tool for analysis, exploration, and communication has become a driving force in the task of unravelling the complex urban fabrics that form our cities. This platform tries to bring together urban visualization projects from around the globe.</div>
         </div>
         <svg className="absolute bottom-12 animate-bounce w-10 h-10 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
       </div>
 
       <div className="snap-center h-screen flex items-center bg-gray-100">
-        <div className="w-screen text-center">[to do: "dynamic(ish) map of vienna"]</div>
+        <div className="w-screen text-center">[to do: "collective slideshow"]</div>
       </div>
 
       <div id="groups" style={{backgroundImage: "url(/bg-vienna-black.png)"}} className="bg-cover bg-center snap-center h-screen p-24 flex justify-center items-center bg-black">
