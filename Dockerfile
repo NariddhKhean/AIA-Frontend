@@ -1,5 +1,5 @@
 # build
-FROM node:18 as build-stage
+FROM node:18-alpine as build-stage
 WORKDIR /frontend
 ENV PATH node_modules/.bin:$PATH
 
