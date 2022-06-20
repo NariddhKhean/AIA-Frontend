@@ -30,7 +30,8 @@ const Map = () => {
   const [argsList, setArgsList] = useState([]);
   function handleSetArgsList(val) { setArgsList(val) }
 
-  const map = InteractiveMap(group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers, {});
+  var popups = {"AirBnBEffect": ["hover"]};
+  const map = InteractiveMap(group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers, popups);
 
   return (
     <div>
@@ -41,6 +42,10 @@ const Map = () => {
       <ToggleMenu map={map} staticLayerNames={staticLayerNames} liveLayers={liveLayers} inferenceReturned={inferenceReturned} handleSetInferenceReturned={handleSetInferenceReturned}/>
 
       <div className={argsVis}><ArgumentMenu argsList={argsList}/></div>
+
+      <div className="absolute bottom-8 right-4">
+        <img width={400} src={process.env.PUBLIC_URL + "/" + group + "/key.jpg"}/>
+      </div>
 
     </div>
   )

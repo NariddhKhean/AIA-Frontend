@@ -31,7 +31,6 @@ const Map = () => {
   function handleSetArgsList(val) { setArgsList(val) }
 
   var popups = {"testHover": ["hover"]};
-
   var map = InteractiveMap(group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers, popups);
 
   return (

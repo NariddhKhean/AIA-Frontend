@@ -60,7 +60,7 @@ const InferenceItem = (props) => {
 
         if (input["type"] === "mapPoint") {
           argsList.push(
-            <div class="py-2">
+            <div className="py-2">
               <div className="w-full flex text-sm italic py-1">
                 <div className="flex-1 text-left">{input["returnID"]}</div>
                 <div className="flex-none text-right" id={"currentArg" + input["returnID"]}>null</div>
@@ -71,7 +71,7 @@ const InferenceItem = (props) => {
 
         } else if (input["type"] === "mapSelectLayer") {
           argsList.push(
-            <div class="py-2">
+            <div className="py-2">
               <div className="w-full flex text-sm italic py-1">
                 <div className="flex-1 text-left">{input["returnID"]}</div>
                 <div className="flex-none text-right" id={"currentArg" + input["returnID"]}>null</div>
@@ -83,7 +83,7 @@ const InferenceItem = (props) => {
         } else if (input["type"] === "uiSlider") {
           inputArgs[input["returnID"]] = input["max"];
           argsList.push(
-            <div class="py-2">
+            <div className="py-2">
               <div className="w-full flex text-sm italic py-1">
                 <div className="flex-1 text-left">{input["prompt"]}</div>
                 <div className="flex-none text-right" id={"currentArg" + input["returnID"]}>{inputArgs[input["returnID"]]}</div>
@@ -95,7 +95,7 @@ const InferenceItem = (props) => {
         } else if (input["type"] === "uiDropdown") {
           inputArgs[input["returnID"]] = input["options"][0];
           argsList.push(
-            <div class="py-2">
+            <div className="py-2">
               <div className="w-full text-sm italic pb-2">{input["prompt"]}</div>
               <select className="w-full form-select block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id={"dropdownArg" + input["returnID"]} onChange={ () => addDropdownTo(input["returnID"]) }>
                 {input["options"].map((option, i) => <option key={i}>{option}</option>)}
@@ -109,7 +109,7 @@ const InferenceItem = (props) => {
       });
 
       argsList.push(
-        <div class="py-2">
+        <div className="py-2">
           <div className="flex pb-2">
             <div className="flex-1"></div>
             <button className="flex-none text-sm font-mono font-black text-gray-800 px-4 py-2 rounded bg-gray-200 hover:bg-gray-100" onClick={ async () => await fetchInference(inputArgs) }>run</button>
