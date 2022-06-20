@@ -44,6 +44,10 @@ const Map = () => {
 
       <div className={argsVis}><ArgumentMenu argsList={argsList}/></div>
 
+      <div className="absolute bottom-8 right-4">
+        <img width={200} src={process.env.PUBLIC_URL + "/" + group + "/key.png"}/>
+      </div>
+
     </div>
   )
 }

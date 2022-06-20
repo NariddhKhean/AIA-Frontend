@@ -28,14 +28,14 @@ const About = () => {
         <div className="w-screen text-center">[to do: "animated gif of the project"]</div>
         <div className="absolute top-24 left-24 right-24 bottom-24">
           <div className="w-1/3 h-full overflow-auto">
-        <div className="p-8 bg-[#FFFFFF80] text-lg">[to do: "paragraph"]</div>
+            <div className="p-8 bg-[#FFFFFF80] text-lg"><span className="font-bold">A.EYE</span> aka alternative eye brings out an urban fascination. The goal of this project is to visualize the unique diversity of Vienna that does not appear on maps. <span className="font-bold">A.EYE</span> enables a new exploration of the city by generating routes as matching app between user preferences and city diversity.</div>
           </div>
     </div>
       </div>
 
       <div className="relative snap-center h-screen flex items-center">
         <div className="h-screen w-screen p-48 pt-24">
-          <img className="object-contain w-full h-full" src={process.env.PUBLIC_URL + "/g" + group + "/methodology.png"}/>
+          <img className="object-contain w-full h-full" src={process.env.PUBLIC_URL + "/g" + group + "/methodology.jpg"}/>
         </div>
         <Link to={"/g" + group + "/map"}>
           <button className="absolute bottom-16 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-[#cee741] to-[#12cdd4] group-hover:from-[#cee741] group-hover:to-[#12cdd4] hover:text-white">

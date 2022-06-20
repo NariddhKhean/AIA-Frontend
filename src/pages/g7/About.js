@@ -28,7 +28,7 @@ const About = () => {
         <div className="w-screen text-center">[to do: "animated gif of the project"]</div>
         <div className="absolute top-24 left-24 right-24 bottom-24">
           <div className="w-1/3 h-full overflow-auto">
-        <div className="p-8 bg-[#FFFFFF80] text-lg">[to do: "paragraph"]</div>
+            <div className="p-8 bg-[#FFFFFF80] text-lg">We assume that urban quality in Vienna may be distributed unevenly.  One of the quality factors is the availability of basic micro scale services.<br/><br/>We would like to work on urban quality improvement for the areas with a level of service lower than average.</div>
           </div>
     </div>
       </div>

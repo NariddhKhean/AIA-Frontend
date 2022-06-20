@@ -64,12 +64,11 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
 
           map.current.on('mouseenter', layerName, (e) => {
 
-            var coordinates = [16.3738, 48.2082];
+            var coordinates = [e.lngLat['lng'], e.lngLat['lat']];
             if (e.features[0].geometry.type === 'Polygon') {
               var coords = e.features[0].geometry.coordinates[0];
               coordinates = coords[0].map((x, idx) => coords.reduce((sum, curr) => sum + curr[idx], 0) / coords.length);
             }
-            // TODO FOR OTHER GEO TYPES
 
             const description = e.features[0].properties.hover;
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
@@ -113,12 +112,11 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
 
           map.current.on('mouseenter', layerName, (e) => {
 
-            var coordinates = [16.3738, 48.2082];
+            var coordinates = [e.lngLat['lng'], e.lngLat['lat']];
             if (e.features[0].geometry.type === 'Polygon') {
               var coords = e.features[0].geometry.coordinates[0];
               coordinates = coords[0].map((x, idx) => coords.reduce((sum, curr) => sum + curr[idx], 0) / coords.length);
             }
-            // TODO FOR OTHER GEO TYPES
 
             const description = e.features[0].properties.hover;
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {

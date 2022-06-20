@@ -35,7 +35,7 @@ const About = () => {
 
       <div className="relative snap-center h-screen flex items-center">
         <div className="h-screen w-screen p-48 pt-24">
-          <img className="object-contain w-full h-full" src={process.env.PUBLIC_URL + "/g" + group + "/methodology.png"}/>
+          <img className="object-contain w-full h-full" src={process.env.PUBLIC_URL + "/g" + group + "/methodology.jpg"}/>
         </div>
         <Link to={"/g" + group + "/map"}>
           <button className="absolute bottom-16 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-[#12cdd4] to-[#0ca789] group-hover:from-[#12cdd4] group-hover:to-[#0ca789] hover:text-white">
