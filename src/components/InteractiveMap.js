@@ -11,7 +11,7 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/light-v10',
       center: [16.3738, 48.2082],
-      zoom: 13,
+      zoom: 16,
       maxBounds: [
         [16.180145, 48.114976],
         [16.579369, 48.323474],
@@ -23,14 +23,14 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
     map.current.once('load', () => {
 
       // static layers
-      fetch(APIURL + '/' + group + '/staticlayers')
+      fetch(APIURL + '/staticlayers/' + group)
         .then(response => response.json())
         .then(fetchedStaticLayerNames => {
           handleSetStaticLayerNames(fetchedStaticLayerNames)
         });
 
       // live layers
-      fetch(APIURL + '/' + group + '/livelayers')
+      fetch(APIURL + '/livelayers/' + group)
         .then(response => response.json())
         .then(fetchedLiveLayers => {
           handleSetLiveLayers(fetchedLiveLayers)
@@ -41,14 +41,14 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
   useEffect(() => {
     async function updateLiveLayers() {
       Object.keys(liveLayers).forEach(async function(layerName) {
-        var geojson = await fetch(APIURL + '/live/' + group + '/' + layerName + '/geo.geojson')
+        var geojson = await fetch(APIURL + '/livelayer/' + group + '/' + layerName + '/geo.geojson')
           .then(response => response.json());
         map.current.addSource(layerName + 'Source', {
           type: 'geojson',
           data: geojson
         });
 
-        var style = await fetch(APIURL + '/live/' + group + '/' + layerName + '/style.json')
+        var style = await fetch(APIURL + '/livelayer/' + group + '/' + layerName + '/style.json')
           .then(response => response.json());
         style['id'] = layerName;
         style['source'] = layerName + 'Source';
@@ -89,14 +89,14 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
   useEffect(() => {
     async function updateStaticLayers() {
       staticLayerNames.forEach(async function(layerName) {
-        var geojson = await fetch(APIURL + '/static/' + group + '/' + layerName + '/geo.geojson')
+        var geojson = await fetch(APIURL + '/staticlayer/' + group + '/' + layerName + '/geo.geojson')
           .then(response => response.json());
         map.current.addSource(layerName + 'Source', {
           type: 'geojson',
           data: geojson
         });
 
-        var style = await fetch(APIURL + '/static/' + group + '/' + layerName + '/style.json')
+        var style = await fetch(APIURL + '/staticlayer/' + group + '/' + layerName + '/style.json')
           .then(response => response.json());
         style['id'] = layerName;
         style['source'] = layerName + 'Source';
