@@ -5,7 +5,7 @@ import ToggleItem from './ToggleItem';
 const ToggleMenu = (props) => {
 
   return (
-    <div className="absolute top-4 right-4 w-48 overflow-y-auto py-4 px-3 bg-white rounded">
+    <div className="absolute top-4 right-4 w-72 overflow-y-auto py-4 px-3 bg-white rounded">
       <div className="pb-4 text-sm font-mono font-black text-gray-800 select-none">static layers</div>
       <ul className="pb-4 space-y-2">
         {props.staticLayerNames.map(

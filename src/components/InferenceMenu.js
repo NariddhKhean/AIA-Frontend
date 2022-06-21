@@ -8,7 +8,7 @@ const InferenceMenu = (props) => {
   function handleSetArgArrow(val) { setArgArrow(val) };
 
   return (
-    <div className="absolute top-4 left-4 w-48 overflow-y-auto py-4 px-3 bg-white rounded">
+    <div className="absolute top-4 left-4 w-72 overflow-y-auto py-4 px-3 bg-white rounded">
       <div className="pb-4 text-sm font-mono font-black text-gray-800 select-none">inferences</div>
       <ul className="space-y-2">
         {Object.keys(props.liveLayers).map(
