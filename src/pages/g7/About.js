@@ -19,18 +19,18 @@ const About = () => {
         </div>
         <div className="basis-1/3 font-light tracking-wide">
           <div className="pb-8 font-sans font-extralight text-3xl tracking-widest">URBAN VOIDS</div>
-          <div className="text-xl">[to do: group description]</div>
+          <div className="text-xl">Urban quality, by its very nature, is distributed unevenly.</div>
         </div>
         <svg className="absolute bottom-12 animate-bounce w-10 h-10 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
       </div>
 
-      <div style={{backgroundImage: "url(/bg-vienna-white.png)"}} className="relative bg-cover bg-center snap-center h-screen flex items-center bg-black">
-        <div className="w-screen text-center">[to do: "animated gif of the project"]</div>
-        <div className="absolute top-24 left-24 right-24 bottom-24">
-          <div className="w-1/3 h-full overflow-auto">
-            <div className="p-8 bg-[#FFFFFF80] text-lg">We assume that urban quality in Vienna may be distributed unevenly.  One of the quality factors is the availability of basic micro scale services.<br/><br/>We would like to work on urban quality improvement for the areas with a level of service lower than average.</div>
-          </div>
-    </div>
+      <div className="snap-center h-screen relative flex flex-row justify-center items-center">
+        <div className="basis-1/3 pl-24 pr-6 font-light tracking-wide text-right">
+          <div className="text-lg"><span className="font-bold">Urban Voids</span> works on improving the quality of the outdoor space in Vienna by finding and filling the voids with the necessary and required amenities by methods of tiling and clustering.</div>
+        </div>
+        <div className="basis-2/3 h-screen py-16 pr-24 pl-6 text-left">
+          <img className="object-scale-down h-full w-full" src={process.env.PUBLIC_URL + "/g" + group + "/preview.gif"}/>
+        </div>
       </div>
 
       <div className="relative snap-center h-screen flex items-center">

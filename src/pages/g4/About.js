@@ -19,18 +19,18 @@ const About = () => {
         </div>
         <div className="basis-1/3 font-light tracking-wide">
           <div className="pb-8 font-sans font-extralight text-3xl tracking-widest">THE AIRBNB EFFECT</div>
-          <div className="text-xl">[to do: group description]</div>
+          <div className="text-xl">By using Machine Learning, we can analyse the impact Airbnb has in the cost of housing per square meter in Vienna.</div>
         </div>
         <svg className="absolute bottom-12 animate-bounce w-10 h-10 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
       </div>
 
-      <div style={{backgroundImage: "url(/bg-vienna-white.png)"}} className="relative bg-cover bg-center snap-center h-screen flex items-center bg-black">
-        <div className="w-screen text-center">[to do: "animated gif of the project"]</div>
-        <div className="absolute top-24 left-24 right-24 bottom-24">
-          <div className="w-1/3 h-full overflow-auto">
-        <div className="p-8 bg-[#FFFFFF80] text-lg">[to do: "paragraph"]</div>
-          </div>
-    </div>
+      <div className="snap-center h-screen relative flex flex-row justify-center items-center">
+        <div className="basis-1/3 pl-24 pr-6 font-light tracking-wide text-right">
+          <div className="text-lg">This becomes a valuable tool when assessing regulations around Airbnb to protect the fair prices of the housing market.</div>
+        </div>
+        <div className="basis-2/3 h-screen py-16 pr-24 pl-6 text-left">
+          <img className="object-scale-down h-full w-full" src={process.env.PUBLIC_URL + "/g" + group + "/preview.gif"}/>
+        </div>
       </div>
 
       <div className="relative snap-center h-screen flex items-center">
