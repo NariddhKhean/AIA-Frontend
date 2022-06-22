@@ -39,7 +39,7 @@ const About = () => {
         </div>
         <Link to={"/g" + group + "/map"}>
           <button className="absolute bottom-16 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-[#dac710] to-[#cee741] group-hover:from-[#dac710] group-hover:to-[#cee741] hover:text-white">
-            <span className="relative px-5 py-2.5 font-bold tracking-widest transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            <span className="relative px-5 py-2.5 font-bold tracking-widest transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
               INTERACTIVE MAP
             </span>
           </button>
