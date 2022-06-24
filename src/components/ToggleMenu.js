@@ -26,7 +26,12 @@ const ToggleMenu = (props) => {
               {
                 Object.keys(props.liveLayers).length > 0
                   ?<div>
-                    <div className="py-4 text-sm font-mono font-black text-gray-800 select-none">inference layers</div>
+                    {
+                      props.staticLayerNames.length > 0
+                        ?<br/>
+                        :<div></div>
+                    }
+                    <div className="pb-4 text-sm font-mono font-black text-gray-800 select-none">inference layers</div>
                     <ul className="space-y-2">
                       {Object.keys(props.liveLayers).map(
                         (layerName, i) => <li key={i}><ToggleItem map={props.map} layerID={layerName} inferenceReturned={props.inferenceReturned} handleSetInferenceReturned={props.handleSetInferenceReturned}/></li>

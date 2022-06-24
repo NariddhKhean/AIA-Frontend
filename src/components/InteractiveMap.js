@@ -4,6 +4,10 @@ import mapboxgl from '!mapbox-gl';  // eslint-disable-line import/no-webpack-loa
 const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers, popups) => {
 
   var map = useRef(null);
+  const popup = new mapboxgl.Popup({
+    closeButton: true,
+    closeOnClick: false
+  });
 
   useEffect(() => {
     if (map.current) return;
@@ -57,12 +61,7 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
 
         // popup
         if (layerName in popups) {
-          const popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
-          });
-
-          map.current.on('mouseenter', layerName, (e) => {
+          map.current.on('click', layerName, (e) => {
 
             var coordinates = [e.lngLat['lng'], e.lngLat['lat']];
             if (e.features[0].geometry.type === 'Polygon') {
@@ -76,8 +75,11 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
             }
             popup.setLngLat(coordinates).setHTML(description).addTo(map.current);
           });
+          map.current.on('mouseenter', layerName, () => {
+            map.current.getCanvas().style.cursor = 'pointer';
+          });
           map.current.on('mouseleave', layerName, () => {
-            popup.remove();
+            map.current.getCanvas().style.cursor = '';
           });
         }
 
@@ -105,12 +107,7 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
 
         // popup
         if (layerName in popups) {
-          const popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
-          });
-
-          map.current.on('mouseenter', layerName, (e) => {
+          map.current.on('click', layerName, (e) => {
 
             var coordinates = [e.lngLat['lng'], e.lngLat['lat']];
             if (e.features[0].geometry.type === 'Polygon') {
@@ -124,8 +121,11 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
             }
             popup.setLngLat(coordinates).setHTML(description).addTo(map.current);
           });
+          map.current.on('mouseenter', layerName, () => {
+            map.current.getCanvas().style.cursor = 'pointer';
+          });
           map.current.on('mouseleave', layerName, () => {
-            popup.remove();
+            map.current.getCanvas().style.cursor = '';
           });
         }
 
