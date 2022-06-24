@@ -133,7 +133,6 @@ const InferenceItem = (props) => {
       props.handleSetArgsList([]);
       props.handleSetArgsVis("hidden");
       props.handleSetArgArrow("");
-      props.handleSetInferenceReturned(props.layerID, true);
 
       setLoadVisibility("invisible");
       setDisableButton(false);
