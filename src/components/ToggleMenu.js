@@ -28,7 +28,7 @@ const ToggleMenu = (props) => {
                   ?<div>
                     {
                       props.staticLayerNames.length > 0
-                        ?<br/>
+                        ?<div><hr/><br/></div>
                         :<div></div>
                     }
                     <div className="pb-4 text-sm font-mono font-black text-gray-800 select-none">inference layers</div>
