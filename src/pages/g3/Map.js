@@ -47,7 +47,11 @@ const Map = () => {
       <div className="absolute top-1/2 w-screen text-center text-2xl">map loading...</div>
       <div ref={mapContainer} className="map-container relative" />
 
-      <InferenceMenu group={group} map={map} APIURL={APIURL} liveLayers={liveLayers} handleSetInferenceReturned={handleSetInferenceReturned} argsVis={argsVis} handleSetArgsVis={handleSetArgsVis} handleSetArgsList={handleSetArgsList}/>
+      {
+        Object.keys(liveLayers).length > 0
+          ?<InferenceMenu group={group} map={map} APIURL={APIURL} liveLayers={liveLayers} handleSetInferenceReturned={handleSetInferenceReturned} argsVis={argsVis} handleSetArgsVis={handleSetArgsVis} handleSetArgsList={handleSetArgsList}/>
+          :<div></div>
+      }
       <ToggleMenu map={map} staticLayerNames={staticLayerNames} liveLayers={liveLayers} inferenceReturned={inferenceReturned} handleSetInferenceReturned={handleSetInferenceReturned}/>
 
       <div className={argsVis}><ArgumentMenu argsList={argsList}/></div>
