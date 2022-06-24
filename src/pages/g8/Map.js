@@ -30,7 +30,7 @@ const Map = () => {
   const [argsList, setArgsList] = useState([]);
   function handleSetArgsList(val) { setArgsList(val) }
 
-  var popups = {"Score": ["hover"]};
+  var popups = {"Score": ["hover"], "Previous Score": ["hover"]};
 
   const map = InteractiveMap(group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers, popups);
 
