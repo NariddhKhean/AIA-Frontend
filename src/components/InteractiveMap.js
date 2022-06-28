@@ -69,7 +69,15 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
               coordinates = coords[0].map((x, idx) => coords.reduce((sum, curr) => sum + curr[idx], 0) / coords.length);
             }
 
-            const description = e.features[0].properties.hover;
+            var description = "";
+            for (const keyName of popups[layerName]) {
+                description += '<span style="font-weight:bold">';
+                description += keyName;
+                description += ': </span>';
+                description += e.features[0].properties[keyName];
+                description += '<br/>';
+            };
+
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
               coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }
@@ -115,7 +123,15 @@ const InteractiveMap = (group, APIURL, mapContainer, staticLayerNames, handleSet
               coordinates = coords[0].map((x, idx) => coords.reduce((sum, curr) => sum + curr[idx], 0) / coords.length);
             }
 
-            const description = e.features[0].properties.hover;
+            var description = "";
+            for (const keyName of popups[layerName]) {
+                description += '<span style="font-weight:bold">';
+                description += keyName;
+                description += ': </span>';
+                description += e.features[0].properties[keyName];
+                description += '<br/>';
+            };
+
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
               coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }

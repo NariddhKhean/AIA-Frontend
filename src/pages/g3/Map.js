@@ -31,14 +31,58 @@ const Map = () => {
   function handleSetArgsList(val) { setArgsList(val) }
 
   var popups = {
-      "Accessibility - Physical": ["hover"],
-      "Accessibility - Visual": ["hover"],
-      "Urban Diversity - Greenness": ["hover"],
-      "Urban Diversity - Public Image": ["hover"],
-      "Bio - Ethnicities": ["hover"],
-      "Bio - Income": ["hover"],
-      "Bio - Population": ["hover"],
-      "Bio - Religion": ["hover"]
+      "Accessibility - Physical": [
+        "name",
+        "elevators",
+        "low_sidewalk",
+        "sidewalk_width",
+        "disabled_parking"
+      ],
+      "Accessibility - Visual": [
+        "name",
+        "acoustic_lights",
+        "tactile_sidewalks",
+        "low_sidewalk"
+      ],
+      "Bio - Ethnicities": [
+        "diversity_index",
+        "afro_ratio",
+        "asian_ratio",
+        "mid_east_ratio",
+        "south_asian_ratio",
+        "latinx_ratio",
+        "european_ratio"
+      ],
+      "Bio - Income": [
+        "INC_FEM_VALUE",
+        "INC_MAL_VALUE"
+      ],
+      "Bio - Population": [
+        "tot_men",
+        "tot_wom",
+        "tot_aus_ratio",
+        "tot_foreign_ratio",
+        "density"
+      ],
+      "Bio - Religion": [
+        "rom-cath",
+        "evang",
+        "jew",
+        "islam",
+        "ortho",
+        "other",
+        "without"
+      ],
+      "Urban Diversity - Greenness": [
+        "name",
+        "tree_counts"
+      ],
+      "Urban Diversity - Public Image": [
+        "name",
+        "tree_index",
+        "public_toilets",
+        "drinking_fountain"
+      ]
   };
   const map = InteractiveMap(group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers, popups);
 

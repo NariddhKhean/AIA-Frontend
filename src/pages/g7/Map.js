@@ -31,12 +31,12 @@ const Map = () => {
   function handleSetArgsList(val) { setArgsList(val) }
 
   var popups = {
-    "Voids": ["hover"],
-    "Atm": ["hover"],
-    "Benches": ["hover"],
-    "Bike": ["hover"],
-    "Vend": ["hover"],
-    "Waste": ["hover"]
+    "Atm": ["Number of ATMs"],
+    "Benches": ["Number of Benches"],
+    "Bike": ["Number of Bikes"],
+    "Vend": ["Number of Vending Machines"],
+    "Voids": ["comments"],
+    "Waste": ["Number of Waste Machines"]
   };
   const map = InteractiveMap(group, APIURL, mapContainer, staticLayerNames, handleSetStaticLayerNames, liveLayers, handleSetLiveLayers, popups);
 
